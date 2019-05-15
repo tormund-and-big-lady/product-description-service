@@ -1,1 +1,1 @@
-# main-player-service
+# product-description-service
