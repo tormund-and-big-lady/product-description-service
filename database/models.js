@@ -5,10 +5,15 @@ const db = require('./index');
 const productDescriptionSchema = new mongoose.Schema({
   productName: String,
   designer: String,
+  price: Number,
   stars: Number,
-  fitDescription: String,
+  reviews: Number,
+  description: String,
+  fit: String,
   sizes: Array,
-  color: Array,
+  colors: Array,
+  imageUrlsColor1: Array,
+  imageUrlsColor2: Array,
   inStore: Boolean
 });
 
