@@ -2,7 +2,7 @@ const path = require('path');
 
 const SRC_DIR = path.join(__dirname, 'client/src');
 const DIST_DIR = path.join(__dirname, 'client/dist');
-const combinedLoaders = require('webpack-combine-loaders')
+const combinedLoaders = require('webpack-combine-loaders');
 
 module.exports = {
   mode: 'development',
@@ -22,7 +22,7 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         loader: combinedLoaders([
           {
             loader: 'style-loader'
@@ -33,9 +33,16 @@ module.exports = {
               modules: true,
               localIdentName: '[name]__[loader]__[hash:base64:5]'
             }
+          },
+          {
+            loader: 'sass-loader'
           }
         ])
-      }
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-inline-loader'
+      }    
     ]
   }
 }

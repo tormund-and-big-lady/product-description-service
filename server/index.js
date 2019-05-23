@@ -17,20 +17,20 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
 // Request Handlers
-app.get('/api/productDescription', (req, res) => {
-  ProductDescription.find({})
+
+// Fetch all data 
+app.get('/api/productDescriptions', (req, res) => {
+  ProductDescription.find({}) 
     .then(data => res.status(200).send(data))
     .catch(err => res.status(404).send('Error'));
 })
 
-app.post('/api/productDescription', (req, res) => {
-  const { productName, designer, stars, fitDescription, sizes, color, inStore } = req.body;
-  ProductDescription.create({ productName, designer, stars, fitDescription, sizes, color, inStore })
-    .then(() => res.status(201).send('Product Description Created'))
+// Fetch random one description
+app.get('/api/productDescription', (req, res) => {
+  ProductDescription.aggregate([{ $sample: { size: 1 } }])
+    .then(data => res.status(200).send(data))
     .catch(err => res.status(404).send('Error'));
 })
-
-// Need to include a get one randomly route
 
 // Verifies and sets port on where server is listens at
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

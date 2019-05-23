@@ -1,0 +1,302 @@
+.mainContainer {
+  width: 300px;
+  height: 810px;
+  line-height: 1.4;
+  font-family: Georgia, Normal;
+  color: #393939
+}
+
+.starsContainer {
+  margin-right: 7px;
+}
+
+.empty {
+  fill: #e3e3e3;
+}
+
+.reviews {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.productNameContainer {
+  margin: 0, 0, 3px, 0;
+}
+
+.productName {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.designerContainer {
+  margin: 0;
+}
+
+.designer {
+  margin: 0;
+}
+
+.designerButton {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 400;
+  text-decoration: none;
+  border-bottom: 2px solid #fff;
+  &:link {
+    color: #393939;
+  }
+  &:visited {
+    color: #393939;
+  }
+  &:hover {
+    border-bottom: 2px solid #393939;
+  }
+  &:active{
+    border-bottom: 2px solid #393939;
+  }
+}
+
+.priceContainer {
+  margin-top: 20px;
+}
+
+.price {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.descriptionContainer {
+  margin-top: 30px;
+}
+
+.description {
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.fitSizeColorContainer {
+  margin-top: 40px;
+}
+
+.fitContainer {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.fit {
+  margin-right: 5px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.fitSize {
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.sizeContainer {
+  position: relative;
+  width: 100%;
+  margin-bottom: 15px;
+  display: flex
+}
+
+.sizeBox {
+  cursor: pointer;
+  position: relative;
+  border: 1px solid #e3e3e3;
+  width: 100%;
+  padding: 12px 15px;
+  display: flex;
+  &:hover {
+    border-bottom: 3px solid #c3baba;
+  };
+}
+
+.sizeAndCarrot {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.boxText {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.carrot {
+  margin-left: auto;
+}
+
+.dropdownContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; 
+  background: #fff;
+  width: 100%;
+}
+
+.dropdownContainerBox {
+  cursor: pointer;
+  position: relative;
+  overflow: auto;
+  background: #fff;
+  box-shadow: 0 0 5px 1px #e3e3e3;
+  padding: 10px 15px;
+  display: flex;
+  border-bottom: 1px solid #e3e3e3;
+  &:hover {
+    border-bottom: 3px solid #c3baba;
+  };
+}
+
+.dropdownTitle {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+.sizeGuideContainer {
+  margin-top: 3px;
+  margin-bottom: 12px;
+  display: flex;
+}
+
+.sizeGuide {
+  margin-left: auto;
+  font-size: 13px;
+  font-weight: 400;
+  text-decoration: none;
+  border-bottom: 1px solid #393939;
+  &:link {
+    color: #393939;
+  }
+  &:visited {
+    color: #393939;
+  }
+  &:hover {
+    border-bottom: 2px solid #393939;
+  }
+  &:active{
+    border-bottom: 2px solid #393939;
+  }
+}
+
+.colorSelectorImage {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 1px #e3e3e3;
+  &:hover{
+    box-shadow: 0 0 0 2px #c3baba;
+    transition: box-shadow .2s;
+  }
+}
+
+.colorText {
+  font-size: 13px;
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+.colorContainer {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.quantityContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.quantity {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  text-align: center;
+  outline-offset: -2px;
+  outline: 2px solid transparent;
+  border: 1px solid #bbb;
+  &:active{
+    transition: box-shadow .2s;
+    box-shadow: 0 0 0 2px #393939;
+  }
+  &:hover {
+    transition: box-shadow .2s;
+    box-shadow: 0 0 0 2px #393939;
+  }
+}
+
+.bagContainer {
+  margin-top: 40px;
+}
+
+.button {
+  cursor: pointer;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  font-weight: 400;
+  height: 40px;
+  &:hover{
+    background: #333;
+  }
+}
+
+.wishListContainer {
+  margin-top: 12px;
+}
+
+.wishList {
+  font-size: 13px;
+  font-weight: 400;
+  text-decoration: none;
+  border-bottom: 1px solid #393939;
+  &:link {
+    color: #393939;
+  }
+  &:visited {
+    color: #393939;
+  }
+  &:hover {
+    border-bottom: 2px solid #393939;
+  }
+  &:active{
+    border-bottom: 2px solid #393939;
+  }
+}
+
+.buyContainer {
+  margin: 20px 0 5px
+}
+
+.buy {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.availabilityContainer {
+  margin: 0 0 15px;
+}
+
+.availability {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.zipAndButton {
+  display: flex;
+}
+
+.zipCode {
+  height: 40px;
+  min-width: 130px;
+  padding: 0 14px;
+  border: 1px solid #bbb;
+  margin-right: 10px;
+}
