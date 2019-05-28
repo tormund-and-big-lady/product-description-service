@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-// import style from './App.scss'
+import style from './App.scss';
 import axios from 'axios';
-import ProductDescription from '../ProductDescription/ProductDescription.jsx'
+import ImageCarousel from '../ImageCarousel/ImageCarousel.jsx';
+import ProductDescription from '../ProductDescription/ProductDescription.jsx';
+import RecommendationBar from '../RecommendationBar/RecommendationBar.jsx'
 
 class App extends Component {
   constructor(props) {
@@ -18,22 +20,29 @@ class App extends Component {
       sizes: [], 
       colors: [], 
       imageUrlsColor1: [], 
-      imageUrlsColor2: [], 
+      imageUrlsColor2: [],
+      imageUrlsIndex: 0,
       colorSelectorArray: [],
+      recommendationData: [],
+      selectedImg: 0,
       inStore: true,
       starsArray: [0,0,0,0,0]
     }
     this.fetchData = this.fetchData.bind(this);
     this.updateStarsArray = this.updateStarsArray.bind(this);
     this.updateColorSelectorArray = this.updateColorSelectorArray.bind(this);
+    this.updateImageUrlsIndex = this.updateImageUrlsIndex.bind(this);
+    this.updateSelectedImg = this.updateSelectedImg.bind(this);
+    this.fetchRecommendationData = this.fetchRecommendationData.bind(this);
   }
 
   componentDidMount() {
     this.fetchData();
+    this.fetchRecommendationData();
   }
 
   fetchData() {
-    axios.get('/api/productDescription')
+    axios.get('/api/productDescription/findOneRandom')
       .then(data => this.setState({
         productName: data.data[0].productName,
         designer: data.data[0].designer,
@@ -46,6 +55,7 @@ class App extends Component {
         colors: data.data[0].colors,
         imageUrlsColor1: data.data[0].imageUrlsColor1,
         imageUrlsColor2: data.data[0].imageUrlsColor2,
+        imageUrls: data.data[0].imageUrlsColor1,
         inStore: data.data[0].inStore 
       }))
       .then(() => this.updateStarsArray())
@@ -80,10 +90,26 @@ class App extends Component {
     })
   }
 
+  updateImageUrlsIndex(imageUrlsIndex) {
+    this.setState({ imageUrlsIndex, selectedImg: 0 })
+  }
+
+  updateSelectedImg(selectedImg) {
+    this.setState({ selectedImg })
+  }
+
+  fetchRecommendationData() {
+    axios.get('/api/productDescription/recommendation')
+      .then(data => this.setState({ recommendationData: data.data}))
+      .catch(err => console.log(err));
+  }
+
   render() {
     return (
-      <div>
-        <ProductDescription productName={this.state.productName} designer={this.state.designer} price={this.state.price} starsArray={this.state.starsArray} reviews={this.state.reviews} description={this.state.description} fit={this.state.fit} sizes={this.state.sizes} colors={this.state.colors} colorSelectorArray={this.state.colorSelectorArray}/>
+      <div className={style.mainContainer}>
+        <ImageCarousel imageUrls={[this.state.imageUrlsColor1, this.state.imageUrlsColor2]} imageUrlsIndex={this.state.imageUrlsIndex} selectedImg={this.state.selectedImg} updateSelectedImg={this.updateSelectedImg}/>
+        <ProductDescription productName={this.state.productName} designer={this.state.designer} price={this.state.price} starsArray={this.state.starsArray} reviews={this.state.reviews} description={this.state.description} fit={this.state.fit} sizes={this.state.sizes} colors={this.state.colors} selectedImg={this.state.selectedImg} colorSelectorArray={this.state.colorSelectorArray} updateImageUrlsIndex={this.updateImageUrlsIndex}/>
+        <RecommendationBar recommendationData={this.state.recommendationData}/>
       </div>
     )
   }

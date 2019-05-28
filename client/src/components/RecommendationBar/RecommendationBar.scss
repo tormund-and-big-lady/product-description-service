@@ -1,0 +1,56 @@
+.mainContainer {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 88px;
+}
+
+.mainText {
+  margin-top: 0;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.dressList {
+  width: 82px;
+  text-align: center;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+}
+
+.dressDescriptionContainer {
+  margin-top: 16px;
+  text-align: center;
+  line-height: 1.4
+}
+
+.a {
+  text-decoration: none;
+  &:link {
+    color: #393939;
+  }
+  &:visited {
+    color: #393939;
+  }
+  &:hover {
+    color: #393939;
+  }
+  &:active{
+    color: #393939;
+  }
+}
+.dressImage {
+  max-width: 100%;
+  height: auto;
+}
+
+.designerText {
+  font-weight: 400;
+}
+
+.dressPrice {
+  font-weight:700;
+  
+}

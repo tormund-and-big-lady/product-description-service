@@ -1,7 +1,7 @@
 const ProductDescription = require('../database/models');
 const dressData = require('./dressData.json');
 
-const designers = ['SOMETHING NAVY', 'ELIZA J', 'LEITH', 'FREE PEOPLE', 'BP.', 'CHELSEA28', 'HARPER ROSE', 'CHARLES HENRY', 'RACHEL PARCELL', 'GIBSON', 'WAYF']
+const designers = ['Something Navy', 'Eliza J', 'Leith', 'Free People', 'BP.', 'Chelsea28', 'Harper Rose', 'Charles Henry', 'Rachel Parcell', 'Gibson', 'WAYF']
 const inStoreBooleans = [true, false];
 const fits = ["Runs large; order one size down.", "True to size.", "Runs small; order one size up."];
 const seeder = () => {

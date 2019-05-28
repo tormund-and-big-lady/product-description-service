@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import style from './ProductDescription.scss';
-import Star from './star.jsx';
 
 class ProductDescription extends Component {
   constructor(props) {
@@ -8,7 +7,9 @@ class ProductDescription extends Component {
 
     this.state = {
       size: 'Size',
+      sizeIndex: 'none',
       color: 'Color',
+      colorIndex: 'none',
       dropdown: 'none'
     }
     this.onClickSizeHandler = this.onClickSizeHandler.bind(this);
@@ -16,16 +17,19 @@ class ProductDescription extends Component {
     this.onClickColorHandler = this.onClickColorHandler.bind(this);
   }
 
-  onClickSizeHandler(size) {
-    this.setState({ size }, () => this.setState({ dropdown: 'none' }))
+  onClickSizeHandler(size, sizeIndex) {
+    this.setState({ size, sizeIndex }, () => this.setState({ dropdown: 'none' }))
   }
 
-  onClickColorHandler(color) {
-    this.setState({ color }, () => this.setState({ dropdown: 'none' }))
+  onClickColorHandler(color, colorIndex) {
+    if (typeof colorIndex === 'number' && colorIndex !== this.props.selectedImg) {
+      this.props.updateImageUrlsIndex(colorIndex);
+    }
+    this.setState({ color, colorIndex }, () => this.setState({ dropdown: 'none' }))
   }
   
   onClickDropdownHandler(dropdown) {
-    this.setState({ dropdown }, () => console.log(this.state.dropdown))
+    this.setState({ dropdown })
   }
 
   render() {
@@ -34,7 +38,17 @@ class ProductDescription extends Component {
         <div className={style.title}>
           <div className={style.starsAndReviewCount}>
             <span className={style.starsContainer}>
-              {this.props.starsArray.map((star, index) => <Star star={star} key={index}/>)}
+              {this.props.starsArray.map((star, index) => {
+                {return star ? (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" key={index}>
+                    <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/>
+                  </svg>
+                ) : (
+                  <svg className={style.empty} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" key={index}>
+                    <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/>
+                  </svg>
+                )}
+              })}
             </span>
             <span className={style.reviews}>
               {`(${this.props.reviews})`}
@@ -47,7 +61,7 @@ class ProductDescription extends Component {
           </div>
           <div className={style.designerContainer}>
             <div className={style.designer}>
-              <a className={style.designerButton} href="#">{this.props.designer}</a>
+              <a className={style.designerButton} href="#">{this.props.designer.toUpperCase()}</a>
             </div>
           </div>
         </div>
@@ -77,14 +91,20 @@ class ProductDescription extends Component {
             </div>
             {this.state.dropdown === 'size' && (
               <div className={style.dropdownContainer}>
-                <span className={[style.dropdownContainerBox, style.dropdownTitle].join(' ')} onClick={() => this.setState({ dropdown: 'none' })}>Choose a size</span>
-                {this.props.sizes.map((size, index) => <span className={style.dropdownContainerBox} key={index} href="#" onClick={() => this.onClickSizeHandler(size)}>{size}</span >)} 
+                <span className={[style.dropdownContainerBoxTitle, style.dropdownTitle].join(' ')} onClick={() => this.setState({ dropdown: 'none' })}>Choose a size</span>
+            {this.props.sizes.map((size, index) => {
+              {return this.state.sizeIndex === index ? (
+                <span className={style.selectedBox} key={index} href="#" onClick={() => this.onClickSizeHandler(size, index)}>{size}</span >
+              ) : (
+                <span className={style.dropdownContainerBox} key={index} href="#" onClick={() => this.onClickSizeHandler(size, index)}>{size}</span >
+              )}
+            })} 
               </div>
             )}
           </div>
           <div className={style.sizeGuideContainer}>
             <a href='#' className={style.sizeGuide}>
-              {this.props.designer} Size Guides
+                {this.props.designer} Size Guides
             </a>
           </div>
           <div className={style.sizeContainer}>
@@ -98,26 +118,40 @@ class ProductDescription extends Component {
             </div>
             {this.state.dropdown === 'color' && (
               <div className={style.dropdownContainer}>
-                <span className={[style.dropdownContainerBox, style.dropdownTitle].join(' ')} onClick={() => this.setState({ dropdown: 'none' })}>Choose a color</span>
-              {this.props.colors.map((color, index) => (
-                <span className={style.dropdownContainerBox} key={index} href="#" onClick={() => this.onClickColorHandler(color)}>
-                  <span>
-                    <img className={style.colorSelectorImage} src={this.props.colorSelectorArray[index]}></img>
+                <span className={[style.dropdownContainerBoxTitle, style.dropdownTitle].join(' ')} onClick={() => this.setState({ dropdown: 'none' })}>Choose a color</span>
+              {this.props.colors.map((color, index) => {
+                {return this.state.colorIndex === index ? (
+                  <span className={style.selectedBox} key={index} href="#" onClick={() => this.onClickColorHandler(color, index)}>
+                    <span>
+                      <img className={`${style.colorSelectorImage} ${style.colorSelectedImage}`} src={this.props.colorSelectorArray[index]}></img>
+                    </span>
+                    <span className={style.colorText}>{color}</span>
                   </span>
-                  <span className={style.colorText}>{color}</span>
-                </span>
-              ))}
+                ): (
+                  <span className={style.dropdownColorContainerBox} key={index} href="#" onClick={() => this.onClickColorHandler(color, index)}>
+                    <span>
+                      <img className={style.colorSelectorImage} src={this.props.colorSelectorArray[index]}></img>
+                    </span>
+                    <span className={style.colorText}>{color}</span>
+                  </span>
+                )}})}
               </div>
             )}
           </div>
         </div>
         <div className={style.colorContainer}>
-        {this.props.colors.map((color, index) => (
-          <span key={index} onClick={() => this.onClickColorHandler(color)}>
-            <img className={style.colorSelectorImage} src={this.props.colorSelectorArray[index]}>
-          </img>
-          </span>
-        ))}
+        {this.props.colors.map((color, index) => {
+          {return this.state.colorIndex === index ? (
+            <span key={index} onClick={() => this.onClickColorHandler(color, index)}>
+              <img className={`${style.colorSelectorImage} ${style.colorSelectedImage}`} src={this.props.colorSelectorArray[index]}></img>
+            </span>
+          ) : (
+            <span key={index} onClick={() => this.onClickColorHandler(color, index)}>
+              <img className={style.colorSelectorImage} src={this.props.colorSelectorArray[index]}></img>
+            </span>
+          )}
+        }
+        )}
         </div>
         <div className={style.quantityContainer}>
           <input type='text' placeholder='1' className={style.quantity}></input>
