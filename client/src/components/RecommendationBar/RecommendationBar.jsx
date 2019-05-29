@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import style from './RecommendationBar.scss'
+
 class RecommendationBar extends Component {
   constructor(props) {
     super(props);
   }
 
-
   render() {
     return (
-      <div className={style.mainContainer}>
-        <h3 className={style.mainText}>People Also Viewed</h3>
-        <ul className={style.dressList}>
+      <div className={style.recommendationBarContainer}>
+        <h3 className={style.titleText}>People Also Viewed</h3>
+        <ul className={style.dressListContainer}>
           {this.props.recommendationData.map((dress, index) => (
             <li className={style.dressDescriptionContainer} key={index}>
-              <a className={style.a} href='#'>
-                <img src={dress.imageUrlsColor1[0]} className={style.dressImage}></img>
+              <a className={style.link} href='#'>
+                <img className={style.dressImage} src={dress.imageUrlsColor1[0]}></img>
                 <div className={style.designerText}>{dress.designer}</div>
                 <div className={style.dressPrice}>${dress.price}.00</div>
               </a>

@@ -1,49 +1,41 @@
-.mainContainer {
-  position: absolute;
-  right: 20px;
-  top: 20px;
+.recommendationBarContainer {
   width: 88px;
+  top: 20px;
+  right: 20px;
+  position: absolute;
 }
 
-.mainText {
+.titleText {
   margin-top: 0;
-  font-size: 16px;
   text-align: center;
   font-weight: 700;
+  font-size: 16px;
 }
 
-.dressList {
+.dressListContainer {
+  padding: 0;
   width: 82px;
   text-align: center;
-  padding: 0;
   list-style: none;
+  line-height: 1.4;
   font-size: 13px;
 }
 
 .dressDescriptionContainer {
   margin-top: 16px;
-  text-align: center;
-  line-height: 1.4
 }
 
-.a {
+.link {
   text-decoration: none;
-  &:link {
-    color: #393939;
-  }
+
   &:visited {
     color: #393939;
   }
-  &:hover {
-    color: #393939;
-  }
-  &:active{
-    color: #393939;
-  }
+
 }
 .dressImage {
-  max-width: 100%;
   height: auto;
+  max-width: 100%;
 }
 
 .designerText {
