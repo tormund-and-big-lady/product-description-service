@@ -1,8 +1,23 @@
+// Colors
+$primary-color: #383838;
+$background-white: #fff;
+$dark-grey: #c3baba;
+
+// Arrow SVG
+%arrow-shared {
+  width: 100%;
+  margin: 0 auto;
+  left: 25%;
+  z-index: 2;
+  position: absolute;
+  cursor: pointer;
+}
+
 .imageCarouselContainer {
-  display: flex;
-  flex-wrap: wrap;
   height: calc(100vh - 240.094px);
   width: calc(100% - 450px);
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .carouselContainer {
@@ -28,57 +43,44 @@
   overflow: hidden;
 }
 
+.arrowUpSVGContainer {
+  @extend %arrow-shared;
+  top: 0;
+}
+
+.arrowDownSVGContainer {
+  @extend %arrow-shared;
+  bottom: 10px;
+}
+
 .carouselImage {
-  cursor: pointer;
-  display: block;
-  border-bottom:3px solid #fff;
-  padding-top: 3px;
-  padding-bottom: 3px;
   height: auto;
   width: 100%;
+  border-bottom:3px solid $background-white;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  display: block;
+  cursor: pointer;
+
   &:hover{
-    border-bottom: 3px solid #c3baba;
+    border-bottom: 3px solid $dark-grey;
     transition: border-bottom .2s;
   }
 }
 
-.arrowUpSVGContainer {
-  cursor: pointer;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 25%;
-  margin: 0 auto;
-  z-index: 2;
+.selectedBorder {
+  border-Bottom: 3px solid $primary-color
 }
 
-.arrowDownSVGContainer {
-  cursor: pointer;
-  position: absolute;
-  width: 100%;
-  bottom: 10px;
-  left: 25%;
-  margin: 0 auto;
-  display: block;
-  z-index: 2;
-}
-
-.visible {
-  display: block;
-}
-
-.invisible {
-  display: hidden;
-}
-.selectedImgContainer {
-  flex: 1;
-  display: flex;
-  flex-wrap: wrap;
+.mainImageContainer {
   height: 100%;
   width: 100%;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
 }
 
-.selectedImg {
+.mainImage {
   height: 100%;
   width: auto;
   margin: 0 auto;

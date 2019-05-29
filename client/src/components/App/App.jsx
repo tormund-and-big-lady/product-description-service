@@ -24,14 +24,14 @@ class App extends Component {
       imageUrlsIndex: 0,
       colorSelectorArray: [],
       recommendationData: [],
-      selectedImg: 0,
+      selectedImgIndex: 0,
       starsArray: [0,0,0,0,0]
     }
     this.fetchData = this.fetchData.bind(this);
     this.updateStarsArray = this.updateStarsArray.bind(this);
     this.updateColorSelectorArray = this.updateColorSelectorArray.bind(this);
     this.updateImageUrlsIndex = this.updateImageUrlsIndex.bind(this);
-    this.updateSelectedImg = this.updateSelectedImg.bind(this);
+    this.updateSelectedImgIndex = this.updateSelectedImgIndex.bind(this);
     this.fetchRecommendationData = this.fetchRecommendationData.bind(this);
   }
 
@@ -89,11 +89,11 @@ class App extends Component {
   }
 
   updateImageUrlsIndex(imageUrlsIndex) {
-    this.setState({ imageUrlsIndex, selectedImg: 0 })
+    this.setState({ imageUrlsIndex, selectedImgIndex: 0 })
   }
 
-  updateSelectedImg(selectedImg) {
-    this.setState({ selectedImg })
+  updateSelectedImgIndex(selectedImgIndex) {
+    this.setState({ selectedImgIndex })
   }
 
   fetchRecommendationData() {
@@ -105,7 +105,7 @@ class App extends Component {
   render() {
     return (
       <div className={style.mainContainer}>
-        <ImageCarousel imageUrls={[this.state.imageUrlsColor1, this.state.imageUrlsColor2]} imageUrlsIndex={this.state.imageUrlsIndex} selectedImg={this.state.selectedImg} updateSelectedImg={this.updateSelectedImg}/>
+        <ImageCarousel imageUrls={[this.state.imageUrlsColor1, this.state.imageUrlsColor2]} imageUrlsIndex={this.state.imageUrlsIndex} selectedImgIndex={this.state.selectedImgIndex} updateSelectedImgIndex={this.updateSelectedImgIndex}/>
         <EssentialInformation productName={this.state.productName} designer={this.state.designer} price={this.state.price} starsArray={this.state.starsArray} reviews={this.state.reviews} description={this.state.description} fit={this.state.fit} sizes={this.state.sizes} colors={this.state.colors} selectedImg={this.state.selectedImg} colorSelectorArray={this.state.colorSelectorArray} updateImageUrlsIndex={this.updateImageUrlsIndex}/>
         <RecommendationBar recommendationData={this.state.recommendationData}/>
       </div>
