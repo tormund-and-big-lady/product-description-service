@@ -1,5 +1,48 @@
-.mainContainer {
+// Colors
+$primary-color: #383838;
+$background-white: #fff;
+$dark-grey: #c3baba;
+
+.appContainer {
+  padding: 0 30px;
+}
+
+.breadCrumbContainer {
+  height: 60px;
+  margin-bottom: 20px;
+  display: flex;
+  text-align: left;
+  line-height: 4rem;
+}
+
+.leftArrowContainer {
+  padding: 15px 0;
+  justify-content: center;
+}
+
+.designerContainer {
+  margin-left: 5px;
+  text-decoration: none;
+  justify-content: center;
+  padding: 12px 0;
+  
+  &:visited {
+    color: $primary-color;
+  }
+}
+
+.designer {
+  border-bottom:2px solid $background-white;
+  cursor: pointer;
+
+
+  &:hover{
+    border-bottom: 2px solid $dark-grey;
+    transition: border-bottom .2s;
+  }
+}
+
+.productDescriptionContainer {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 30px;
 }
