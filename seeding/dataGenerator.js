@@ -2,7 +2,6 @@ const ProductDescription = require('../database/models');
 const dressData = require('./dressData.json');
 
 const designers = ['Something Navy', 'Eliza J', 'Leith', 'Free People', 'BP.', 'Chelsea28', 'Harper Rose', 'Charles Henry', 'Rachel Parcell', 'Gibson', 'WAYF']
-const inStoreBooleans = [true, false];
 const fits = ["Runs large; order one size down.", "True to size.", "Runs small; order one size up."];
 const seeder = () => {
   const dressDataRandomInt = Math.floor(Math.random() * dressData.length);
@@ -18,9 +17,8 @@ const seeder = () => {
   const colors = dressData[dressDataRandomInt].colors;
   const imageUrlsColor1 = dressData[dressDataRandomInt].imageUrlsColor1;
   const imageUrlsColor2 = dressData[dressDataRandomInt].imageUrlsColor2;
-  const inStore = inStoreBooleans[Math.floor(Math.random() * 2)];
   
-  ProductDescription.create({ productName, designer, price, stars, reviews, description, fit, sizes, colors, imageUrlsColor1, imageUrlsColor2, inStore})
+  ProductDescription.create({ productName, designer, price, stars, reviews, description, fit, sizes, colors, imageUrlsColor1, imageUrlsColor2 })
     .then(() => console.log('seeded'))
     .catch((err) => console.log(err));
 }

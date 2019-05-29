@@ -1,29 +1,32 @@
+// Colors
+$primary-color: #383838;
+$background-white: #fff;
+$dark-grey: #c3baba;
+$light-grey: #e3e3e3;
+$button-black: #000000;
+
 .mainContainer {
-  width: 300px;
   height: 810px;
-  line-height: 1.4;
-  font-family: Georgia, Normal;
-  color: #393939;
-  font-size: 13px;
-  font-weight: 400;
-  flex: none;
+  width: 300px;
   left: 300px;
+  margin: 0;
+  flex: none;
+  color: $primary-color;
+  font-family: Georgia, Normal;
+  font-weight: 400;
+  line-height: 1.4;
+  font-size: 13px;
 }
 
 .starsContainer {
   margin-right: 7px;
 }
 
-.empty {
-  fill: #e3e3e3;
-}
-
 .productNameContainer {
-  margin: 0, 0, 3px, 0;
+  margin-bottom: 3px;
 }
 
 .productName {
-  margin: 0;
   font-size: 19px;
   font-weight: 400;
 }
@@ -32,25 +35,17 @@
   margin-top: 3px;
 }
 
-.designer {
-  margin: 0;
-}
-
 .designerButton {
   margin: 0;
   text-decoration: none;
-  border-bottom: 2px solid #fff;
-  &:link {
-    color: #393939;
-  }
+  border-bottom: 2px solid $background-white;
+
   &:visited {
-    color: #393939;
+    color: $primary-color;
   }
+
   &:hover {
-    border-bottom: 2px solid #393939;
-  }
-  &:active{
-    border-bottom: 2px solid #393939;
+    border-bottom: 2px solid $primary-color;
   }
 }
 
@@ -93,14 +88,15 @@
 .sizeBox {
   cursor: pointer;
   position: relative;
-  border: 1px solid #e3e3e3;
+  border: 1px solid $light-grey;
   width: 100%;
   padding: 12px 15px;
   display: flex;
   margin-bottom: 2px;
+
   &:hover {
     margin-bottom: 0;
-    border-bottom: 3px solid #c3baba;
+    border-bottom: 3px solid $dark-grey;
   };
 }
 
@@ -123,21 +119,21 @@
   top: 0;
   left: 0;
   z-index: 1; 
-  background: #fff;
+  background: $background-white;
   width: 100%;
 }
 
 .dropdownContainerBox {
   cursor: pointer;
   position: relative;
-  overflow: auto;
-  background: #fff;
-  box-shadow: 0 0 5px 1px #e3e3e3;
+  background: $background-white;
+  box-shadow: 0 0 5px 1px $light-grey;
   padding: 10px 15px;
   display: flex;
-  border-bottom: 3px solid #fff;
+  border-bottom: 3px solid $background-white;
+
   &:hover {
-    border-bottom: 3px solid #c3baba;
+    border-bottom: 3px solid $dark-grey;
   };
 }
 
@@ -145,22 +141,22 @@
   cursor: pointer;
   position: relative;
   overflow: auto;
-  background: #fff;
-  box-shadow: 0 0 5px 1px #e3e3e3;
+  background: $background-white;
+  box-shadow: 0 0 5px 1px $light-grey;
   padding: 10px 15px;
   display: flex;
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid $primary-color;
 }
 
 .dropdownContainerBoxTitle {
   cursor: pointer;
   position: relative;
   overflow: auto;
-  background: #fff;
-  box-shadow: 0 0 5px 1px #e3e3e3;
+  background: $background-white;
+  box-shadow: 0 0 5px 1px $light-grey;
   padding: 10px 15px;
   display: flex;
-  border-bottom: 3px solid #fff;
+  border-bottom: 3px solid $background-white;
 }
 
 .dropdownTitle {
@@ -176,21 +172,16 @@
 .sizeGuide {
   margin-left: auto;
   text-decoration: none;
-  border-bottom: 1px solid #393939;
+  border-bottom: 1px solid $primary-color;
   margin-bottom: 1px;
-  &:link {
-    color: #393939;
-  }
+
   &:visited {
-    color: #393939;
+    color: $primary-color;
   }
+
   &:hover {
     margin-bottom: 0;
-    border-bottom: 2px solid #393939;
-  }
-  &:active{
-    margin-bottom: 0;
-    border-bottom: 2px solid #393939;
+    border-bottom: 2px solid $primary-color;
   }
 }
 
@@ -199,30 +190,32 @@
   width: 30px;
   border-radius: 50%;
   margin-right: 10px;
-  border: 3px solid #fff;
-  box-shadow: 0 0 0 1px #e3e3e3;
+  border: 3px solid $background-white;
+  box-shadow: 0 0 0 1px $light-grey;
+
   &:hover{
-    box-shadow: 0 0 0 2px #c3baba;
+    box-shadow: 0 0 0 2px $dark-grey;
     transition: box-shadow .2s;
   }
 }
 
 .colorSelectedImage {
   height: 30px;
-  box-shadow: 0 0 0 2px #000;
+  box-shadow: 0 0 0 2px $primary-color;
 }
 
 .dropdownColorContainerBox {
   cursor: pointer;
   position: relative;
   overflow: auto;
-  background: #fff;
-  box-shadow: 0 0 5px 1px #e3e3e3;
+  background: $background-white;
+  box-shadow: 0 0 5px 1px $light-grey;
   padding: 10px 15px 10px 15px;
   display: flex;
-  border-bottom: 3px solid #fff;
+  border-bottom: 3px solid $background-white;
+  
   &:hover {
-    border-bottom: 3px solid #c3baba;
+    border-bottom: 3px solid $dark-grey;
   };
 }
 
@@ -248,14 +241,11 @@
   text-align: center;
   outline-offset: -2px;
   outline: 2px solid transparent;
-  border: 1px solid #bbb;
-  &:active{
-    transition: box-shadow .2s;
-    box-shadow: 0 0 0 2px #393939;
-  }
+  border: 1px solid $dark-grey;
+
   &:hover {
     transition: box-shadow .2s;
-    box-shadow: 0 0 0 2px #393939;
+    box-shadow: 0 0 0 2px $primary-color;
   }
 }
 
@@ -266,11 +256,12 @@
 .button {
   cursor: pointer;
   width: 100%;
-  background: #000;
-  color: #fff;
+  background: $button-black;
+  color: $background-white;
   height: 40px;
+
   &:hover{
-    background: #333;
+    background: #333333;
   }
 }
 
@@ -280,18 +271,14 @@
 
 .wishList {
   text-decoration: none;
-  border-bottom: 1px solid #393939;
-  &:link {
-    color: #393939;
-  }
+  border-bottom: 1px solid $primary-color;
+
   &:visited {
-    color: #393939;
+    color: $primary-color;
   }
+
   &:hover {
-    border-bottom: 2px solid #393939;
-  }
-  &:active{
-    border-bottom: 2px solid #393939;
+    border-bottom: 2px solid $primary-color;
   }
 }
 
@@ -315,6 +302,6 @@
   height: 40px;
   min-width: 130px;
   padding: 0 14px;
-  border: 1px solid #bbb;
+  border: 1px solid $dark-grey;
   margin-right: 10px;
 }

@@ -10,7 +10,7 @@ class ProductDescription extends Component {
       sizeIndex: 'none',
       color: 'Color',
       colorIndex: 'none',
-      dropdown: 'none'
+      dropdown: 'none',
     }
     this.onClickSizeHandler = this.onClickSizeHandler.bind(this);
     this.onClickDropdownHandler = this.onClickDropdownHandler.bind(this);
@@ -22,7 +22,7 @@ class ProductDescription extends Component {
   }
 
   onClickColorHandler(color, colorIndex) {
-    if (typeof colorIndex === 'number' && colorIndex !== this.props.selectedImg) {
+    if (typeof colorIndex === 'number') {
       this.props.updateImageUrlsIndex(colorIndex);
     }
     this.setState({ color, colorIndex }, () => this.setState({ dropdown: 'none' }))
@@ -39,15 +39,12 @@ class ProductDescription extends Component {
           <div className={style.starsAndReviewCount}>
             <span className={style.starsContainer}>
               {this.props.starsArray.map((star, index) => {
-                {return star ? (
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" key={index}>
+                let starred = star ? { fill: '#383838' } : { fill: '#e3e3e3' };
+                return (
+                  <svg style={starred} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" key={index}>
                     <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/>
                   </svg>
-                ) : (
-                  <svg className={style.empty} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" key={index}>
-                    <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/>
-                  </svg>
-                )}
+                )
               })}
             </span>
             <span className={style.reviews}>

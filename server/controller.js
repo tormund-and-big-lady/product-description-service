@@ -12,7 +12,7 @@ module.exports = {
       .catch(err => res.status(404).send('Error'));
   },
   recommendation: (req, res) => {
-    ProductDescription.aggregate([{ $sample: { size: 5 } }])
+    ProductDescription.aggregate([{ $sample: { size: 4 } }])
     .then(data => res.status(200).send(data))
     .catch(err => res.status(404).send('Error'));
   },

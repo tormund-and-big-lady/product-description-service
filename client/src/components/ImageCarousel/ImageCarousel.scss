@@ -1,4 +1,4 @@
-.mainContainer {
+.imageCarouselContainer {
   display: flex;
   flex-wrap: wrap;
   height: calc(100vh - 240.094px);
@@ -6,22 +6,26 @@
 }
 
 .carouselContainer {
-  height: 540px;
+  height: 545px;
   width: 60px;
   position: relative;
   display: flex;
   justify-content: center;
 }
 
-.carouselPhotoContainer {
-  white-space: nowrap;
-  height: 500px;
+.arrowAndPhotoContainer {
+  height: 505px;
   width: 60px;
-  position: relative;
+  flex-wrap: wrap;
 }
 
-.carouselUlContainer {
-  list-style: none;
+.carouselPhotoContainer {
+  margin: 10px 0;
+  white-space: nowrap;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 .carouselImage {
@@ -30,9 +34,8 @@
   border-bottom:3px solid #fff;
   padding-top: 3px;
   padding-bottom: 3px;
-  height: 100px;
+  height: auto;
   width: 100%;
-  display: block;
   &:hover{
     border-bottom: 3px solid #c3baba;
     transition: border-bottom .2s;
@@ -40,12 +43,33 @@
 }
 
 .arrowUpSVGContainer {
+  cursor: pointer;
   position: absolute;
-  top: 0px;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
+  top: 0;
+  left: 25%;
+  margin: 0 auto;
+  z-index: 2;
 }
 
+.arrowDownSVGContainer {
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+  left: 25%;
+  margin: 0 auto;
+  display: block;
+  z-index: 2;
+}
+
+.visible {
+  display: block;
+}
+
+.invisible {
+  display: hidden;
+}
 .selectedImgContainer {
   flex: 1;
   display: flex;
