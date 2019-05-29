@@ -25,7 +25,7 @@ $dark-grey: #c3baba;
   text-decoration: none;
   justify-content: center;
   padding: 12px 0;
-  
+
   &:visited {
     color: $primary-color;
   }
@@ -37,7 +37,7 @@ $dark-grey: #c3baba;
 
 
   &:hover{
-    border-bottom: 2px solid $dark-grey;
+    border-bottom: 2px solid $primary-color;
     transition: border-bottom .2s;
   }
 }

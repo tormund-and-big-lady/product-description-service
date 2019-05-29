@@ -16,6 +16,7 @@ $dark-grey: #c3baba;
 .imageCarouselContainer {
   height: calc(100vh - 240.094px);
   width: calc(100% - 450px);
+  position: relative;
   display: flex;
   flex-wrap: wrap;
 }
