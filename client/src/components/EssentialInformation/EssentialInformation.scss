@@ -5,6 +5,37 @@ $dark-grey: #c3baba;
 $light-grey: #e3e3e3;
 $button-black: #000000;
 
+// Links 
+%links-shared {
+  text-decoration: none;
+
+  &:visited {
+    color: $primary-color;
+  }
+
+  &:hover {
+    margin-bottom: 0;
+    border-bottom: 2px solid $primary-color;
+  }
+}
+
+// DropDowns
+%dropDown-shared {
+  width: 100%;
+  display: flex;
+  padding: 10px 15px;
+  cursor: pointer;
+  box-shadow: 0 0 5px 1px $light-grey;
+  background: $background-white;
+}
+
+%dropDown-shared-hover {
+  &:hover {
+    margin-bottom: 0;
+    border-bottom: 3px solid $dark-grey;
+  };
+}
+
 .essentialInformation {
   height: 810px;
   width: 300px;
@@ -24,149 +55,95 @@ $button-black: #000000;
 
 .productNameContainer {
   margin-bottom: 3px;
-}
 
-.productName {
-  margin: 0;
-  font-size: 19px;
-  font-weight: 400;
+  .productName {
+    margin: 0;
+    font-weight: 400;
+    font-size: 19px;
+  }
 }
 
 .designerContainer {
   margin-top: 3px;
-}
 
-.designerButton {
-  text-decoration: none;
-  border-bottom: 2px solid $background-white;
-
-  &:visited {
-    color: $primary-color;
-  }
-
-  &:hover {
-    border-bottom: 2px solid $primary-color;
+  .designerLink {
+    @extend %links-shared;
+    border-bottom: 2px solid $background-white;
   }
 }
 
 .priceContainer {
   margin-top: 20px;
-}
 
-.price {
-  font-weight: 700;
-  font-size: 15px;
+  .price {
+    font-weight: 700;
+    font-size: 15px;
+  }
 }
 
 .descriptionContainer {
   margin-top: 30px;
 }
 
-
-.fitSizeColorContainer {
-  margin-top: 40px;
-}
-
 .fitContainer {
+  margin-top: 40px;
   margin-bottom: 5px;
+
+  .fit {
+    font-weight: 700;
+    margin-right: 5px;
+  }
 }
 
-.fit {
-  margin-right: 5px;
-  font-weight: 700;
-}
-
-.sizeContainer {
-  position: relative;
+.dropDownMainContainer {
   margin-bottom: 15px;
-  display: flex
-}
-
-.sizeBox {
-  cursor: pointer;
-  border: 1px solid $light-grey;
-  width: 100%;
-  padding: 12px 15px;
   display: flex;
-  margin-bottom: 2px;
-
-  &:hover {
-    margin-bottom: 0;
-    border-bottom: 3px solid $dark-grey;
-  };
+  position: relative;
+  
 }
 
-.boxText {
+.dropDownContainerMainTitle {
+  @extend %dropDown-shared;
+  margin-bottom: 2px;  
+  border-bottom: 1px solid $light-grey;
+}
+
+.bold {
   font-weight: 700;
+}
+
+.dropDownContainer {
+  position: absolute;
+  z-index: 1; 
+  width: 100%;
+}
+
+.dropDownContainerBox {
+  @extend %dropDown-shared;
+  @extend %dropDown-shared-hover;
+  margin-bottom: 2px;  
+  border-bottom: 1px solid $light-grey;
+}
+
+.selectedBox {
+  @extend %dropDown-shared;
+  border-bottom: 3px solid $primary-color;
 }
 
 .carrot {
   margin-left: auto;
 }
 
-.dropdownContainer {
-  position: absolute;
-  z-index: 1; 
-  width: 100%;
-}
-
-.dropdownContainerBoxTitle {
-  cursor: pointer;
-  background: $background-white;
-  box-shadow: 0 0 5px 1px $light-grey;
-  padding: 10px 15px;
-  display: flex;
-  border-bottom: 1px solid $light-grey;
-  margin-bottom: 2px;
-}
-
-.dropdownContainerBox {
-  cursor: pointer;
-  background: $background-white;
-  box-shadow: 0 0 5px 1px $light-grey;
-  padding: 10px 15px;
-  display: flex;
-  border-bottom: 1px solid $light-grey;
-  margin-bottom: 2px;
-
-  &:hover {
-    border-bottom: 3px solid $dark-grey;
-    margin-bottom: 0;
-  };
-}
-
-.selectedBox {
-  cursor: pointer;
-  background: $background-white;
-  box-shadow: 0 0 5px 1px $light-grey;
-  padding: 10px 15px;
-  display: flex;
-  border-bottom: 3px solid $primary-color;
-}
-
-.dropdownTitle {
-  font-weight: 700;
-}
-
 .sizeGuideContainer {
   margin-top: 3px;
   margin-bottom: 12px;
   display: flex;
-}
 
-.sizeGuide {
-  margin-left: auto;
-  text-decoration: none;
-  border-bottom: 1px solid $primary-color;
-  margin-bottom: 1px;
-
-  &:visited {
-    color: $primary-color;
-  }
-
-  &:hover {
-    margin-bottom: 0;
-    border-bottom: 2px solid $primary-color;
+  .sizeGuideLink {
+    @extend %links-shared;
+    margin-left: auto;
+    border-bottom: 1px solid $primary-color;
+    margin-bottom: 1px;
   }
 }
 
@@ -184,17 +161,10 @@ $button-black: #000000;
   }
 }
 
-.dropdownColorContainerBox {
-  cursor: pointer;
-  background: $background-white;
-  box-shadow: 0 0 5px 1px $light-grey;
+.dropDownColorContainerBox {
+  @extend %dropDown-shared;
+  @extend %dropDown-shared-hover;
   padding: 10px 15px;
-  display: flex;
-  border-bottom: 3px solid $background-white;
-  
-  &:hover {
-    border-bottom: 3px solid $dark-grey;
-  };
 }
 
 .colorSelectedImage {
@@ -242,41 +212,35 @@ $button-black: #000000;
 
 .wishListContainer {
   margin-top: 12px;
-}
 
-.wishList {
-  text-decoration: none;
-  border-bottom: 1px solid $primary-color;
-
-  &:visited {
-    color: $primary-color;
-  }
-
-  &:hover {
-    border-bottom: 2px solid $primary-color;
+  .wishListLink {
+    @extend %links-shared;
+    border-bottom: 1px solid $primary-color;
+    margin-bottom: 1px;
   }
 }
+
 
 .buyContainer {
-  margin: 20px 0 5px
-}
+  margin: 20px 0 5px;
 
-.buy {
-  font-weight: 700;
+  .buy {
+    font-weight: 700;
+  }
 }
 
 .availabilityContainer {
-  margin: 0 0 15px;
+  margin: 0 0 15px 0;
 }
 
-.zipAndButton {
+.zipAndButtonContainer {
   display: flex;
-}
-
-.zipCode {
-  height: 40px;
-  min-width: 130px;
-  padding: 0 14px;
-  border: 1px solid $dark-grey;
-  margin-right: 10px;
+  
+  .zipCode {
+    height: 40px;
+    min-width: 130px;
+    padding: 0 14px;
+    border: 1px solid $dark-grey;
+    margin-right: 10px;
+  }
 }
