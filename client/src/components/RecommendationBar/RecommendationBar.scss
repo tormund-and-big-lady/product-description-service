@@ -1,3 +1,6 @@
+// Colors
+$primary-color: #393939;
+
 .recommendationBarContainer {
   right: 50px;
   width: 88px;
@@ -27,8 +30,12 @@
 .link {
   text-decoration: none;
 
+  &:link {
+    color: $primary-color;
+  }
+  
   &:visited {
-    color: #393939;
+    color: $primary-color;
   }
 
 }

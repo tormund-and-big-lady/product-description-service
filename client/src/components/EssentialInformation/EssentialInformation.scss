@@ -9,6 +9,10 @@ $button-black: #000000;
 %links-shared {
   text-decoration: none;
 
+  &:link {
+    color: $primary-color;
+  }
+  
   &:visited {
     color: $primary-color;
   }

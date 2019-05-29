@@ -26,6 +26,10 @@ $dark-grey: #c3baba;
   justify-content: center;
   padding: 12px 0;
 
+  &:link {
+    color: $primary-color;
+  }
+  
   &:visited {
     color: $primary-color;
   }

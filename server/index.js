@@ -6,7 +6,7 @@ const router = require('./router');
 
 // Creating server and port number
 const app = express();
-const port = 3000;
+const port = 3001;
 
 // Middleware
 app.use(morgan('dev'));
