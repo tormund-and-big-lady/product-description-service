@@ -46,7 +46,7 @@ class EssentialInformation extends Component {
               )
             })}
           </span>
-          <span className={style.reviews}>{this.props.reviews}</span>
+          <span className={style.reviews}>({this.props.reviews})</span>
         </div>
         <div className={style.productNameContainer}>
           <h1 className={style.productName}>{this.props.productName}</h1>
