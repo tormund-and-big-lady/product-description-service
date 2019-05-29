@@ -5,7 +5,7 @@ $dark-grey: #c3baba;
 $light-grey: #e3e3e3;
 $button-black: #000000;
 
-.mainContainer {
+.essentialInformation {
   height: 810px;
   width: 300px;
   left: 300px;
@@ -27,6 +27,7 @@ $button-black: #000000;
 }
 
 .productName {
+  margin: 0;
   font-size: 19px;
   font-weight: 400;
 }
@@ -36,7 +37,6 @@ $button-black: #000000;
 }
 
 .designerButton {
-  margin: 0;
   text-decoration: none;
   border-bottom: 2px solid $background-white;
 
@@ -68,26 +68,22 @@ $button-black: #000000;
 }
 
 .fitContainer {
-  width: 100%;
   margin-bottom: 5px;
 }
 
 .fit {
   margin-right: 5px;
   font-weight: 700;
-  font-size: 13px;
 }
 
 .sizeContainer {
   position: relative;
-  width: 100%;
   margin-bottom: 15px;
   display: flex
 }
 
 .sizeBox {
   cursor: pointer;
-  position: relative;
   border: 1px solid $light-grey;
   width: 100%;
   padding: 12px 15px;
@@ -100,12 +96,6 @@ $button-black: #000000;
   };
 }
 
-.sizeAndCarrot {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
 .boxText {
   font-weight: 700;
 }
@@ -116,47 +106,42 @@ $button-black: #000000;
 
 .dropdownContainer {
   position: absolute;
-  top: 0;
-  left: 0;
   z-index: 1; 
-  background: $background-white;
   width: 100%;
 }
 
-.dropdownContainerBox {
+.dropdownContainerBoxTitle {
   cursor: pointer;
-  position: relative;
   background: $background-white;
   box-shadow: 0 0 5px 1px $light-grey;
   padding: 10px 15px;
   display: flex;
-  border-bottom: 3px solid $background-white;
+  border-bottom: 1px solid $light-grey;
+  margin-bottom: 2px;
+}
+
+.dropdownContainerBox {
+  cursor: pointer;
+  background: $background-white;
+  box-shadow: 0 0 5px 1px $light-grey;
+  padding: 10px 15px;
+  display: flex;
+  border-bottom: 1px solid $light-grey;
+  margin-bottom: 2px;
 
   &:hover {
     border-bottom: 3px solid $dark-grey;
+    margin-bottom: 0;
   };
 }
 
 .selectedBox {
   cursor: pointer;
-  position: relative;
-  overflow: auto;
   background: $background-white;
   box-shadow: 0 0 5px 1px $light-grey;
   padding: 10px 15px;
   display: flex;
   border-bottom: 3px solid $primary-color;
-}
-
-.dropdownContainerBoxTitle {
-  cursor: pointer;
-  position: relative;
-  overflow: auto;
-  background: $background-white;
-  box-shadow: 0 0 5px 1px $light-grey;
-  padding: 10px 15px;
-  display: flex;
-  border-bottom: 3px solid $background-white;
 }
 
 .dropdownTitle {
@@ -199,24 +184,21 @@ $button-black: #000000;
   }
 }
 
-.colorSelectedImage {
-  height: 30px;
-  box-shadow: 0 0 0 2px $primary-color;
-}
-
 .dropdownColorContainerBox {
   cursor: pointer;
-  position: relative;
-  overflow: auto;
   background: $background-white;
   box-shadow: 0 0 5px 1px $light-grey;
-  padding: 10px 15px 10px 15px;
+  padding: 10px 15px;
   display: flex;
   border-bottom: 3px solid $background-white;
   
   &:hover {
     border-bottom: 3px solid $dark-grey;
   };
+}
+
+.colorSelectedImage {
+  box-shadow: 0 0 0 2px $primary-color;
 }
 
 .colorText {
@@ -228,16 +210,9 @@ $button-black: #000000;
   margin-bottom: 20px;
 }
 
-.quantityContainer {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
 .quantity {
   width: 40px;
   height: 40px;
-  min-width: 40px;
   text-align: center;
   outline-offset: -2px;
   outline: 2px solid transparent;

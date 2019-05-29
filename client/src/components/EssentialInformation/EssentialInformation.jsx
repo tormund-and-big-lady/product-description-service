@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import style from './ProductDescription.scss';
+import style from './EssentialInformation.scss';
 
-class ProductDescription extends Component {
+class EssentialInformation extends Component {
   constructor(props) {
     super(props);
 
@@ -34,32 +34,30 @@ class ProductDescription extends Component {
 
   render() {
     return (
-      <div className={style.mainContainer}>
-        <div className={style.title}>
-          <div className={style.starsAndReviewCount}>
-            <span className={style.starsContainer}>
-              {this.props.starsArray.map((star, index) => {
-                let starred = star ? { fill: '#383838' } : { fill: '#e3e3e3' };
-                return (
-                  <svg style={starred} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" key={index}>
-                    <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/>
-                  </svg>
-                )
-              })}
-            </span>
-            <span className={style.reviews}>
-              {`(${this.props.reviews})`}
-            </span>
-          </div>
-          <div className={style.productNameContainer}>
-            <h1 className={style.productName}>
-              {this.props.productName}
-            </h1>
-          </div>
-          <div className={style.designerContainer}>
-            <div className={style.designer}>
-              <a className={style.designerButton} href="#">{this.props.designer.toUpperCase()}</a>
-            </div>
+      <div className={style.essentialInformation}>
+        <div className={style.starReviewCount}>
+          <span className={style.starsContainer}>
+            {this.props.starsArray.map((star, index) => {
+              let starColor = star ? { fill: '#383838' } : { fill: '#e3e3e3' };
+              return (
+                <svg style={starColor} width="16" height="16" viewBox="0 0 24 24" key={index}>
+                  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/>
+                </svg>
+              )
+            })}
+          </span>
+          <span className={style.reviews}>
+            {`(${this.props.reviews})`}
+          </span>
+        </div>
+        <div className={style.productNameContainer}>
+          <h1 className={style.productName}>
+            {this.props.productName}
+          </h1>
+        </div>
+        <div className={style.designerContainer}>
+          <div className={style.designer}>
+            <a className={style.designerButton} href="#">{this.props.designer.toUpperCase()}</a>
           </div>
         </div>
         <div className={style.priceContainer}>
@@ -150,7 +148,7 @@ class ProductDescription extends Component {
         }
         )}
         </div>
-        <div className={style.quantityContainer}>
+        <div>
           <input type='text' placeholder='1' className={style.quantity}></input>
         </div>
         <div className={style.bagContainer}>
@@ -178,4 +176,4 @@ class ProductDescription extends Component {
   }
 }
 
-export default ProductDescription;
+export default EssentialInformation;
