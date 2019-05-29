@@ -34,7 +34,7 @@ class EssentialInformation extends Component {
 
   render() {
     return (
-      <div className={style.essentialInformation}>
+      <div className={style.essentialInformationContainer}>
         <div className={style.starAndReviewCountContainer}>
           <span className={style.starsContainer}>
             {this.props.starsArray.map((star, index) => {
