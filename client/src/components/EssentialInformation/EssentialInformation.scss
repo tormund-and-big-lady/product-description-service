@@ -113,9 +113,9 @@ $button-black: #000000;
 }
 
 .dropDownContainer {
+  width: 100%;
   position: absolute;
   z-index: 1; 
-  width: 100%;
 }
 
 .dropDownContainerBox {
@@ -199,11 +199,11 @@ $button-black: #000000;
 }
 
 .button {
-  cursor: pointer;
+  height: 40px;
   width: 100%;
   background: $button-black;
   color: $background-white;
-  height: 40px;
+  cursor: pointer;
 
   &:hover{
     background: #333333;
@@ -239,8 +239,8 @@ $button-black: #000000;
   .zipCode {
     height: 40px;
     min-width: 130px;
-    padding: 0 14px;
-    border: 1px solid $dark-grey;
     margin-right: 10px;
+    border: 1px solid $dark-grey;
+    padding: 0 14px;
   }
 }
