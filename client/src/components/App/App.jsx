@@ -41,7 +41,7 @@ class App extends Component {
   }
 
   fetchData() {
-    axios.get('/api/productDescription/findOneRandom')
+    axios.get('/productDescription/findOneRandom')
       .then(data => this.setState({
         productName: data.data[0].productName,
         designer: data.data[0].designer,
@@ -97,7 +97,7 @@ class App extends Component {
   }
 
   fetchRecommendationData() {
-    axios.get('/api/productDescription/recommendation')
+    axios.get('/productDescription/recommendation')
       .then(data => this.setState({ recommendationData: data.data}))
       .catch(err => console.log(err));
   }
@@ -108,7 +108,7 @@ class App extends Component {
         <div className={style.breadCrumbContainer}>
         <div className={style.leftArrowContainer}>
           <svg height="16" width="9">
-            <path d="M1 8l7 7M8 1L1 8" stroke="#737373" fill="none" stroke-width="1px"></path>
+            <path d="M1 8l7 7M8 1L1 8" stroke="#737373" fill="none" strokeWidth="1px"></path>
           </svg>
         </div>
           <a className={style.designerContainer}href='#'>
