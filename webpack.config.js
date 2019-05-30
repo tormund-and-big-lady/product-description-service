@@ -42,7 +42,23 @@ module.exports = {
       {
         test: /\.svg$/,
         loader: 'svg-inline-loader'
-      }    
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name(file) {
+                if (process.env.NODE_ENV === 'development') {
+                  return '[path][name].[ext]';
+                }
+                return '[hash].[ext]';
+              },
+            },
+          },
+        ]
+      } 
     ]
   }
 }

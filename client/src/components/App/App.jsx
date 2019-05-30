@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import style from './App.scss';
 import axios from 'axios';
+import BreadCrumbs from '../BreadCrumbs/BreadCrumbs.jsx';
 import ImageCarousel from '../ImageCarousel/ImageCarousel.jsx';
 import EssentialInformation from '../EssentialInformation/EssentialInformation.jsx';
 import RecommendationBar from '../RecommendationBar/RecommendationBar.jsx'
-import BreadCrumbs from '../BreadCrumbs/BreadCrumbs.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -111,6 +111,9 @@ class App extends Component {
           <ImageCarousel imageUrls={[this.state.imageUrlsColor1, this.state.imageUrlsColor2]} imageUrlsIndex={this.state.imageUrlsIndex} selectedImgIndex={this.state.selectedImgIndex} updateSelectedImgIndex={this.updateSelectedImgIndex}/>
           <EssentialInformation productName={this.state.productName} designer={this.state.designer} price={this.state.price} starsArray={this.state.starsArray} reviews={this.state.reviews} description={this.state.description} fit={this.state.fit} sizes={this.state.sizes} colors={this.state.colors} selectedImg={this.state.selectedImg} colorSelectorArray={this.state.colorSelectorArray} updateImageUrlsIndex={this.updateImageUrlsIndex}/>
           <RecommendationBar recommendationData={this.state.recommendationData}/>
+        </div>
+        <div className={style.sizeInfoContainer}>
+          <img className={style.sizeInfoImage} src={'https://s3-us-west-1.amazonaws.com/fec-image-dump/SizeInfo.png'}></img>
         </div>
       </div>
     )
