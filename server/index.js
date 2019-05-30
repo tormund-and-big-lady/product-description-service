@@ -6,7 +6,7 @@ const router = require('./router');
 
 // Creating server and port number
 const app = express();
-const port = 3002;
+const port = process.env.PORT || 3002;
 
 // Middleware
 app.use(morgan('dev'));
@@ -17,7 +17,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
 // Router to handle all requests
-
 app.use('/productDescription', router);
 
 // Verifies and sets port on where server is listens at
