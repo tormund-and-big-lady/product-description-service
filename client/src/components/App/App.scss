@@ -1,5 +1,5 @@
 .appContainer {
-  padding: 0 30px;
+  padding: 0 5%;
   margin: 75px 0;
   position: relative;
 }
@@ -9,13 +9,7 @@
   flex-wrap: wrap;
 }
 
-.sizeInfoContainer {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .sizeInfoImage {
-  max-width: 100%;
-  height: auto;
-  width: auto;
+  height: 100%;
+  width: 100%;
 }
