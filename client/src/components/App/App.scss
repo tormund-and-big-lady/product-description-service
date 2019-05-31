@@ -1,7 +1,21 @@
+@font-face {
+  font-family: 'Brandon Text';
+  src: url(../../../dist/__fonts__/brandon-text.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Brandon Text Bold';
+  src: url(../../../dist/__fonts__/brandon-text-bold.woff2) format('woff2');
+  font-style: normal;
+}
+
 .appContainer {
   padding: 0 5%;
   margin: 75px 0;
   position: relative;
+  font-family: 'Brandon Text';
 }
 
 .productDescriptionContainer {

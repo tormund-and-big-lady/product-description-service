@@ -1,9 +1,10 @@
 const router = require('express').Router();
 const controller = require('./controller');
 
-// Fetch all data
-router.route('/findAll')
-  .get(controller.findAll);
+// Fetch or delete all data 
+router.route('/allDocs')
+  .get(controller.findAll)
+  .delete(controller.deleteAll);
 
 // Fetch one dress randomly
 router.route('/findOneRandom')
@@ -12,9 +13,5 @@ router.route('/findOneRandom')
 // Fetch 5 dresses for Recommendation Bar
 router.route('/recommendation')
   .get(controller.recommendation);
-
-// Fetch one dress by _id
-router.route('/findOneById/:_id')
-  .get(controller.findOneById);
 
 module.exports = router;

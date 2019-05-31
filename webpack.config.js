@@ -44,21 +44,16 @@ module.exports = {
         loader: 'svg-inline-loader'
       },
       {
-        test: /\.(png|jpe?g|gif)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name(file) {
-                if (process.env.NODE_ENV === 'development') {
-                  return '[path][name].[ext]';
-                }
-                return '[hash].[ext]';
-              },
-            },
-          },
-        ]
-      } 
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/'
+          }
+      }]
+      },
+      
     ]
   }
 }
