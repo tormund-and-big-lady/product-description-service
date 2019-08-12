@@ -34,11 +34,3 @@ Nodejs, Express, React
 * [react.js](https://reactjs.org/docs/getting-started.html) - React documentation
 * [express.js](https://expressjs.com/en/api.html) - Express documentation
 * [mongoose](https://mongoosejs.com/docs/index.html) - Mongoose documentation
-
-### Installing Dependencies
-
-From within the root directory:
-
-npm install
-npm run build
-npm start
