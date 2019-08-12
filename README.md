@@ -1,13 +1,12 @@
 # product-description-service
 
-> Project description
+> Recreation of Nordstrom's main product description and breadcrumbs section.
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - [Menu and Cart by Calvin Shum](https://github.com/hrla29-group-targaryen/menu-cart)
+  - [Delivery/Pickup Time and Sponsored Restaurants by James Kim](https://github.com/hrla29-group-targaryen/time-sponsored)
+  - [Reviews by Ramin Rabani](https://github.com/hrla29-group-targaryen/reviews)
 
 ## Table of Contents
 
@@ -17,16 +16,23 @@
 
 ## Usage
 
-> Some usage instructions
+```
+git clone https://github.com/hrla29-group-targaryen/nav-about.git
+cd nav-about
+npm install
+npm run seed-db (if needed)
+npm run start
+```
 
 ## Requirements
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
-- Node 6.13.0
-- etc
+Nodejs, Express, React
 
 ## Development
+
+* [react.js](https://reactjs.org/docs/getting-started.html) - React documentation
+* [express.js](https://expressjs.com/en/api.html) - Express documentation
+* [mongoose](https://mongoosejs.com/docs/index.html) - Mongoose documentation
 
 ### Installing Dependencies
 
