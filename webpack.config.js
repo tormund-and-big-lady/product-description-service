@@ -51,7 +51,7 @@ module.exports = {
               name: '[name].[ext]',
               outputPath: 'fonts/'
           }
-      }]
+        }]
       },
       
     ]
