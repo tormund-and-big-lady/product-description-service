@@ -1,37 +1,36 @@
 # product-description-service
 
-> Project description
+> Recreation of Nordstrom's main product description and breadcrumbs section.
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - [Nav-bar by Morgan Lin](https://github.com/tormund-and-big-lady/nav-bar-service)
+  - [More-looks by Gabrielle Hong](https://github.com/tormund-and-big-lady/more-looks-service)
+  - [Reviews by Li Sun](https://github.com/tormund-and-big-lady/review-service)
 
 ## Table of Contents
 
 1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
+2. [Requirements](#requirements)
+3. [Development](#development)
 
 ## Usage
 
-> Some usage instructions
+```
+git clone https://github.com/tormund-and-big-lady/product-description-service.git
+cd product-description-service
+npm install
+npm run dev:build
+npm run seed
+npm run start
+```
 
 ## Requirements
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
-- Node 6.13.0
-- etc
+Nodejs, Express, React
 
 ## Development
 
-### Installing Dependencies
-
-From within the root directory:
-
-npm install
-npm run build
-npm start
+* [react.js](https://reactjs.org/docs/getting-started.html) - React documentation
+* [express.js](https://expressjs.com/en/api.html) - Express documentation
+* [mongoose](https://mongoosejs.com/docs/index.html) - Mongoose documentation
